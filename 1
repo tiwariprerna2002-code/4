@@ -1,1 +1,120 @@
-11
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gaming World</title>
+
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+    }
+
+    /* Animated Neon Gradient Background */
+    .bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #0a0f24, #141a33, #1c2759, #0f4c75);
+        background-size: 400% 400%;
+        animation: gradientMove 12s infinite linear;
+    }
+
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Particle Stars */
+    .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url("https://i.ibb.co/HFhL9Qj/particles.png");
+        opacity: 0.3;
+        animation: starMove 20s linear infinite;
+    }
+
+    @keyframes starMove {
+        from { transform: translateY(0); }
+        to { transform: translateY(-3000px); }
+    }
+
+    /* Center Content */
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 70px;
+        color: #00d4ff;
+        text-shadow: 0 0 25px #00d4ff;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        0% { text-shadow: 0 0 10px #00d4ff; }
+        100% { text-shadow: 0 0 30px #00ffff; }
+    }
+
+    /* Gaming Character Float Animation */
+    .character {
+        width: 300px;
+        filter: drop-shadow(0 0 25px #00eaff);
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 35px;
+        font-size: 20px;
+        color: #fff;
+        border: 2px solid #00f2ff;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.4s;
+        text-shadow: 0 0 8px #00f2ff;
+    }
+
+    .btn:hover {
+        background: #00eaff;
+        color: #000;
+        box-shadow: 0 0 20px #00eaff;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="stars"></div>
+
+<div class="content">
+    <h1>Gaming Universe</h1>
+
+    <!-- Floating Gamer Character -->
+    <img src="https://i.ibb.co/6r8ts8X/gaming-character.png" class="character">
+
+    <br>
+    <a href="#" class="btn">Start Game</a>
+    <a href="#" class="btn">Explore</a>
+</div>
+
+</body>
+</html>
+
