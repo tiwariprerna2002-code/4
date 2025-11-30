@@ -2,29 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Semi-Classical Dance</title>
+<title>Gaming World</title>
+
 <style>
     body {
         margin: 0;
-        font-family: 'Verdana';
         overflow: hidden;
-        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
     }
 
-    /* Moving Background */
+    /* Animated Neon Gradient Background */
     .bg {
         position: fixed;
         width: 100%;
         height: 100%;
-        background: url("https://i.ibb.co/8jWz6M0/dance-bg.jpg") no-repeat center/cover;
-        filter: brightness(0.5);
-        animation: zoom 20s linear infinite;
+        background: linear-gradient(45deg, #0a0f24, #141a33, #1c2759, #0f4c75);
+        background-size: 400% 400%;
+        animation: gradientMove 12s infinite linear;
     }
 
-    @keyframes zoom {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.15); }
-        100% { transform: scale(1); }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Particle Stars */
+    .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url("https://i.ibb.co/HFhL9Qj/particles.png");
+        opacity: 0.3;
+        animation: starMove 20s linear infinite;
+    }
+
+    @keyframes starMove {
+        from { transform: translateY(0); }
+        to { transform: translateY(-3000px); }
     }
 
     /* Center Content */
@@ -38,63 +54,66 @@
 
     h1 {
         font-size: 70px;
-        letter-spacing: 3px;
-        animation: fade 4s infinite;
+        color: #00d4ff;
+        text-shadow: 0 0 25px #00d4ff;
+        animation: glow 2s infinite alternate;
     }
 
-    @keyframes fade {
-        0% { opacity: 0.2; }
-        50% { opacity: 1; }
-        100% { opacity: 0.2; }
+    @keyframes glow {
+        0% { text-shadow: 0 0 10px #00d4ff; }
+        100% { text-shadow: 0 0 30px #00ffff; }
     }
 
-    /* Dancer Animation */
-    .dancer {
+    /* Gaming Character Float Animation */
+    .character {
         width: 300px;
-        margin: auto;
-        filter: drop-shadow(0 0 20px #ffccdd);
-        animation: move 6s ease-in-out infinite;
+        filter: drop-shadow(0 0 25px #00eaff);
+        animation: float 4s ease-in-out infinite;
     }
 
-    @keyframes move {
-        0% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(3deg); }
-        100% { transform: translateY(0) rotate(0deg); }
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0); }
     }
 
-    /* Button */
+    /* Buttons */
     .btn {
         display: inline-block;
         margin-top: 20px;
-        padding: 12px 30px;
-        background: rgba(255, 180, 200, 0.3);
-        border: 1px solid #fff;
-        color: white;
-        text-decoration: none;
+        padding: 15px 35px;
         font-size: 20px;
+        color: #fff;
+        border: 2px solid #00f2ff;
         border-radius: 8px;
-        backdrop-filter: blur(3px);
-        transition: 0.3s;
+        text-decoration: none;
+        transition: 0.4s;
+        text-shadow: 0 0 8px #00f2ff;
     }
+
     .btn:hover {
-        background: rgba(255, 180, 200, 0.7);
+        background: #00eaff;
+        color: #000;
+        box-shadow: 0 0 20px #00eaff;
     }
+
 </style>
 </head>
 <body>
 
 <div class="bg"></div>
+<div class="stars"></div>
 
 <div class="content">
-    <h1>Semi-Classical Dance</h1>
+    <h1>Gaming Universe</h1>
 
-    <!-- Dancer Silhouette -->
-    <img src="https://i.ibb.co/QYzQ52x/dancer-silhouette.png" class="dancer">
+    <!-- Floating Gamer Character -->
+    <img src="https://i.ibb.co/6r8ts8X/gaming-character.png" class="character">
 
     <br>
-    <a href="#" class="btn">Explore More</a>
+    <a href="#" class="btn">Start Game</a>
+    <a href="#" class="btn">Explore</a>
 </div>
 
 </body>
 </html>
-
